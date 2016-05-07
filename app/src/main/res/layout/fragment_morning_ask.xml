@@ -1,4 +1,4 @@
- <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,9 +17,9 @@
             android:id="@+id/cvMorningFeel"
             android:layout_width="match_parent"
             android:layout_height="240dp"
+            android:background="@color/white"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="16dp"
-            android:background="@color/white"
             card_view:cardUseCompatPadding="true">
 
             <RelativeLayout
@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/swMorningFeel"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/how_do_you_feel_today"
+                    android:text="@string/how_do_you_feel_today_my_friend"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -73,8 +73,6 @@
         </android.support.v7.widget.CardView>
 
 
-
-
         <android.support.v7.widget.CardView
             android:id="@+id/cvMorningMotivated"
             android:layout_width="match_parent"
@@ -102,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/swMorningMotivated"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/how_do_you_feel_today"
+                    android:text="@string/are_you_motivated_for_today"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -134,8 +132,6 @@
         </android.support.v7.widget.CardView>
 
 
-
-
         <android.support.v7.widget.CardView
             android:id="@+id/cvMorningPlans"
             android:layout_width="match_parent"
@@ -163,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/swMorningPlans"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/how_do_you_feel_today"
+                    android:text="@string/do_you_have_plans_for_today"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -195,8 +191,6 @@
         </android.support.v7.widget.CardView>
 
 
-
-
         <android.support.v7.widget.CardView
             android:id="@+id/cvMorningHappy"
             android:layout_width="match_parent"
@@ -224,7 +218,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/swMorningHappy"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/how_do_you_feel_today"
+                    android:text="@string/are_you_going_to_be_happy_if_you_accomplish_your_goals_for_today"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -256,9 +250,6 @@
         </android.support.v7.widget.CardView>
 
 
-
-
-
         <android.support.v7.widget.CardView
             android:id="@+id/cvMorningAdventure"
             android:layout_width="match_parent"
@@ -286,7 +277,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/swMorningAdventure"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/how_do_you_feel_today"
+                    android:text="@string/are_you_ready_for_one_more_unexpected_adventure"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -318,6 +309,46 @@
         </android.support.v7.widget.CardView>
 
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvMorningSeeResults"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="16dp"
+            card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="casual"
+                    android:text="See results"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/tvMorningSeeResults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="casual"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/blue_900"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 </ScrollView>
+

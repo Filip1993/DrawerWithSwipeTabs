@@ -1,6 +1,5 @@
 package com.filipkesteli.drawerwithswipetabs;
 
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +13,6 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -25,6 +23,7 @@ public class PrimaryFragment extends Fragment {
     private CardView cvMorningPlans;
     private CardView cvMorningHappy;
     private CardView cvMorningAdventure;
+    private CardView cvMorningSeeResults;
 
     private SwitchCompat swMorningFeel;
     private SwitchCompat swMorningMotivated;
@@ -37,6 +36,7 @@ public class PrimaryFragment extends Fragment {
     private TextView tvMorningPlans;
     private TextView tvMorningHappy;
     private TextView tvMorningAdventure;
+    private TextView tvMorningSeeResults;
 
     private AppCompatSeekBar sbMorningFeel;
     private AppCompatSeekBar sbMorningMotivated;
@@ -68,6 +68,7 @@ public class PrimaryFragment extends Fragment {
         cvMorningPlans = (CardView) v.findViewById(R.id.cvMorningPlans);
         cvMorningHappy = (CardView) v.findViewById(R.id.cvMorningHappy);
         cvMorningAdventure = (CardView) v.findViewById(R.id.cvMorningAdventure);
+        cvMorningSeeResults = (CardView) v.findViewById(R.id.cvMorningSeeResults);
 
         swMorningFeel = (SwitchCompat) v.findViewById(R.id.swMorningFeel);
         swMorningMotivated = (SwitchCompat) v.findViewById(R.id.swMorningMotivated);
@@ -80,6 +81,7 @@ public class PrimaryFragment extends Fragment {
         tvMorningPlans = (TextView) v.findViewById(R.id.tvMorningPlans);
         tvMorningHappy = (TextView) v.findViewById(R.id.tvMorningHappy);
         tvMorningAdventure = (TextView) v.findViewById(R.id.tvMorningAdventure);
+        tvMorningSeeResults = (TextView) v.findViewById(R.id.tvMorningSeeResults);
 
         sbMorningFeel = (AppCompatSeekBar) v.findViewById(R.id.sbMorningFeel);
         sbMorningMotivated = (AppCompatSeekBar) v.findViewById(R.id.sbMorningMotivated);
@@ -87,6 +89,12 @@ public class PrimaryFragment extends Fragment {
         sbMorningHappy = (AppCompatSeekBar) v.findViewById(R.id.sbMorningHappy);
         sbMorningAdventure = (AppCompatSeekBar) v.findViewById(R.id.sbMorningAdventure);
     }
+
+    private int progressAdventure = 0;
+    private int progressHappy = 0;
+    private int progressFeel = 0;
+    private int progressMotivated = 0;
+    private int progressPlans = 0;
 
     private void setupListeners() {
         //imamo 2 dijela koja treba obaviti:
@@ -111,6 +119,7 @@ public class PrimaryFragment extends Fragment {
                 //minimalan progress je 0, a maksimalan 100...
                 // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
                 sbMorningFeel.setMax(100);
+                progressFeel = progress;
                 if (progress < 20) {
                     tvMorningFeel.setText(getResources().getString(R.string.crappy));
                 } else if (progress >= 20 && progress < 40) {
@@ -155,16 +164,17 @@ public class PrimaryFragment extends Fragment {
                 //minimalan progress je 0, a maksimalan 100...
                 // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
                 sbMorningMotivated.setMax(100);
+                progressMotivated = progress;
                 if (progress < 20) {
-                    tvMorningMotivated.setText(getResources().getString(R.string.crappy));
+                    tvMorningMotivated.setText(R.string.absolutely_not);
                 } else if (progress >= 20 && progress < 40) {
-                    tvMorningMotivated.setText(getResources().getString(R.string.so_so));
+                    tvMorningMotivated.setText(R.string.not_really);
                 } else if (progress >= 40 && progress < 60) {
-                    tvMorningMotivated.setText(getResources().getString(R.string.good));
+                    tvMorningMotivated.setText(R.string.well_maybe);
                 } else if (progress >= 60 && progress < 80) {
-                    tvMorningMotivated.setText(getResources().getString(R.string.happy));
+                    tvMorningMotivated.setText(R.string.yes_i_am);
                 } else if (progress >= 80 && progress <= 100) {
-                    tvMorningMotivated.setText(getResources().getString(R.string.excited));
+                    tvMorningMotivated.setText(R.string.of_course);
                 }
             }
 
@@ -199,16 +209,17 @@ public class PrimaryFragment extends Fragment {
                 //minimalan progress je 0, a maksimalan 100...
                 // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
                 sbMorningPlans.setMax(100);
+                progressPlans = progress;
                 if (progress < 20) {
-                    tvMorningPlans.setText(getResources().getString(R.string.crappy));
+                    tvMorningPlans.setText(R.string.absolutely_not);
                 } else if (progress >= 20 && progress < 40) {
-                    tvMorningPlans.setText(getResources().getString(R.string.so_so));
+                    tvMorningPlans.setText(R.string.not_really);
                 } else if (progress >= 40 && progress < 60) {
-                    tvMorningPlans.setText(getResources().getString(R.string.good));
+                    tvMorningPlans.setText(R.string.well_maybe);
                 } else if (progress >= 60 && progress < 80) {
-                    tvMorningPlans.setText(getResources().getString(R.string.happy));
+                    tvMorningPlans.setText(R.string.yes_i_am);
                 } else if (progress >= 80 && progress <= 100) {
-                    tvMorningPlans.setText(getResources().getString(R.string.excited));
+                    tvMorningPlans.setText(R.string.of_course);
                 }
             }
 
@@ -243,16 +254,17 @@ public class PrimaryFragment extends Fragment {
                 //minimalan progress je 0, a maksimalan 100...
                 // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
                 sbMorningHappy.setMax(100);
+                progressHappy = progress;
                 if (progress < 20) {
-                    tvMorningHappy.setText(getResources().getString(R.string.crappy));
+                    tvMorningHappy.setText(R.string.absolutely_not);
                 } else if (progress >= 20 && progress < 40) {
-                    tvMorningHappy.setText(getResources().getString(R.string.so_so));
+                    tvMorningHappy.setText(R.string.not_really);
                 } else if (progress >= 40 && progress < 60) {
-                    tvMorningHappy.setText(getResources().getString(R.string.good));
+                    tvMorningHappy.setText(R.string.well_maybe);
                 } else if (progress >= 60 && progress < 80) {
-                    tvMorningHappy.setText(getResources().getString(R.string.happy));
+                    tvMorningHappy.setText(R.string.yes_i_am);
                 } else if (progress >= 80 && progress <= 100) {
-                    tvMorningHappy.setText(getResources().getString(R.string.excited));
+                    tvMorningHappy.setText(R.string.of_course);
                 }
             }
 
@@ -287,16 +299,17 @@ public class PrimaryFragment extends Fragment {
                 //minimalan progress je 0, a maksimalan 100...
                 // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
                 sbMorningAdventure.setMax(100);
+                progressAdventure = progress;
                 if (progress < 20) {
-                    tvMorningAdventure.setText(getResources().getString(R.string.crappy));
+                    tvMorningAdventure.setText(R.string.absolutely_not);
                 } else if (progress >= 20 && progress < 40) {
-                    tvMorningAdventure.setText(getResources().getString(R.string.so_so));
+                    tvMorningAdventure.setText(R.string.not_really);
                 } else if (progress >= 40 && progress < 60) {
-                    tvMorningAdventure.setText(getResources().getString(R.string.good));
+                    tvMorningAdventure.setText(R.string.well_maybe);
                 } else if (progress >= 60 && progress < 80) {
-                    tvMorningAdventure.setText(getResources().getString(R.string.happy));
+                    tvMorningAdventure.setText(R.string.yes_i_am);
                 } else if (progress >= 80 && progress <= 100) {
-                    tvMorningAdventure.setText(getResources().getString(R.string.excited));
+                    tvMorningAdventure.setText(R.string.of_course);
                 }
             }
 
@@ -308,6 +321,24 @@ public class PrimaryFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+        cvMorningSeeResults.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvMorningSeeResults.setText(R.string.absolutely_not);
+                int rezultat = (progressAdventure + progressHappy + progressPlans + progressMotivated + progressFeel) / 5;
+                if (rezultat < 20) {
+                    tvMorningSeeResults.setText(R.string.success_doesn_t_just_come_and_find_you_you_have_to_go_out_and_get_it);
+                } else if (rezultat >= 20 && rezultat < 40) {
+                    tvMorningSeeResults.setText(R.string.every_accomplishment_starts_with_the_decision_to_try);
+                } else if (rezultat >= 40 && rezultat < 60) {
+                    tvMorningSeeResults.setText(R.string.work_until_your_idols_become_your_rivals);
+                } else if (rezultat >= 60 && rezultat < 80) {
+                    tvMorningSeeResults.setText(R.string.winners_are_not_people_who_never_fail_but_people_who_never_quit);
+                }else if (rezultat >= 80) {
+                    tvMorningSeeResults.setText(R.string.to_be_a_champ_you_have_to_believe_in_yourself_when_nobody_else_will);
+                }
             }
         });
     }

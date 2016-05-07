@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Drawer With Swipe Tabs</string>
+    <string name="app_name">Motivator App</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -34,4 +34,10 @@
     <string name="well_maybe">well, maybe</string>
     <string name="yes_i_am">yes, I am</string>
     <string name="of_course">of course</string>
+    <string name="to_be_a_champ_you_have_to_believe_in_yourself_when_nobody_else_will">To be a champ, you have to believe in yourself when nobody else will.</string>
+    <string name="work_until_your_idols_become_your_rivals">Work until your idols become your rivals!</string>
+    <string name="success_doesn_t_just_come_and_find_you_you_have_to_go_out_and_get_it">Success doesn\'t just come and find you, you have to go out and get it.</string>
+    <string name="every_accomplishment_starts_with_the_decision_to_try">Every accomplishment starts with the decision to try.</string>
+    <string name="winners_are_not_people_who_never_fail_but_people_who_never_quit">Winners are not people who never fail, but people who never quit.</string>
+    <string name="apsolutely_not">apsolutely not</string>
 </resources>
